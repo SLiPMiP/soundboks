@@ -28,8 +28,8 @@ func createnewbox():
 	"id":boxid,
 	"pos":Vector3(0,0,0),
 	"size":Vector3(10,10,10),
-	"name":"gaylord",
-	"color":Color8(90,130,170),
+	"name":"Instrument",
+	"color":Color8(90,130,170,255), #RGBA
 	"split":false,
 	"high":true
 	}
