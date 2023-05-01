@@ -53,6 +53,12 @@ func createnewbox():
 
 func _on_newboxbutton_pressed():
 	createnewbox()
+	xvalue.value = listobox[boxid-1]["pos"].x 
+	yvalue.value = listobox[boxid-1]["pos"].y
+	zvalue.value = listobox[boxid-1]["pos"].z 
+	widthvalue.value = listobox[boxid-1]["size"].z 
+	heightvalue.value = listobox[boxid-1]["size"].y
+	depthvalue.value = listobox[boxid-1]["size"].x 
 #	print(listobox[0]["pos"].x)
 
 onready var xvalue = $Control/x/xn
