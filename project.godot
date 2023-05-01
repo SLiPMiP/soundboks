@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Boxobox"
-run/main_scene="res://test.tscn"
+run/main_scene="res://master.tscn"
 
 [display]
 

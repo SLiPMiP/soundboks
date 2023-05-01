@@ -13,11 +13,17 @@ var newColor= ColorPickerButton.new()
 func _ready():
 	pass # Replace with function body.
 
+onready var xvalue = $"../../x"
+onready var yvalue = $"../../y"
+onready var zvalue = $"../../z"
 func _button_pressed(boxid,listobox):
 #	print("gays count to"+String(listobox[boxid-1]["id"]))
 	for i in range(listobox.size()):
 		listobox[i]["high"]=false
 	listobox[boxid-1]["high"]=true
+	xvalue.value = listobox[boxid-1]["pos"].x 
+	yvalue.value = listobox[boxid-1]["pos"].y
+	zvalue.value = listobox[boxid-1]["pos"].z 
 	
 
 func createnewlistitem(boxid,listobox):
