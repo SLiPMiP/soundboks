@@ -29,7 +29,7 @@ func createnewbox():
 	"pos":Vector3(0,0,0),
 	"size":Vector3(10,10,10),
 	"name":"Instrument",
-	"color":Color8(90,130,170,255), #RGBA
+	"color":Color(0.352941,0.509804,0.666667,1), #RGBA
 	"split":false,
 	"high":true
 	}
@@ -47,6 +47,7 @@ func createnewbox():
 	
 	add_child(newbox)
 	objsboxs.append(newbox)
+	
 	emit_signal("newlistitem",boxid,listobox)
 
 
@@ -104,3 +105,12 @@ func _on_depth_value_changed(value):
 			listobox[i]["size"].x = value
 			depthvalue.value = value
 			objsboxs[i].set_depth(listobox[i]["size"].x)
+
+
+func _on_colorpicker_color_changed(color):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["color"]=color
+			objsboxs[i].material.albedo_color=color
+#color(0.352941,0.509804,0.666667,1)
+

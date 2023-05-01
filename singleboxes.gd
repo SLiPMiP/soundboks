@@ -6,12 +6,10 @@ var newVcont = VBoxContainer.new()
 var newButt = Button.new()
 var newLabel = Label.new()
 var newPanel = Panel.new()
-var newColor= ColorPickerButton.new()
-
-
+#var newColor= ColorPickerButton.new()
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 onready var xvalue = $"../../x"
 onready var yvalue = $"../../y"
@@ -30,10 +28,9 @@ func _button_pressed(boxid,listobox):
 	widthvalue.value = listobox[boxid-1]["size"].x 
 	heightvalue.value = listobox[boxid-1]["size"].y
 	depthvalue.value = listobox[boxid-1]["size"].z
-
-
-func _color_changed(color,boxid,listobox):
-	listobox[boxid-1]["color"]=color
+	
+	$"../../../colorpicker".color=listobox[boxid-1]["color"]
+	
 	 
 
 func createnewlistitem(boxid,listobox):

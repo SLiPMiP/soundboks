@@ -52,7 +52,8 @@ script = SubResource( 1 )
 [node name="DirectionalLight" type="DirectionalLight" parent="CSGBox"]
 
 [node name="Control" type="Control" parent="."]
-margin_right = 40.0
+margin_left = 27.0
+margin_right = 67.0
 margin_bottom = 40.0
 
 [node name="newboxbutton" type="Button" parent="Control"]
@@ -200,6 +201,13 @@ margin_bottom = 700.0
 rect_min_size = Vector2( 100, 700 )
 script = ExtResource( 2 )
 
+[node name="colorpicker" type="ColorPickerButton" parent="."]
+margin_left = 888.0
+margin_top = 830.0
+margin_right = 948.0
+margin_bottom = 884.0
+color = Color( 0.352941, 0.509804, 0.666667, 1 )
+
 [connection signal="newlistitem" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_newlistitem"]
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
 [connection signal="value_changed" from="Control/x" to="." method="_on_x_value_changed"]
@@ -208,3 +216,4 @@ script = ExtResource( 2 )
 [connection signal="value_changed" from="Control/width" to="." method="_on_width_value_changed"]
 [connection signal="value_changed" from="Control/height" to="." method="_on_height_value_changed"]
 [connection signal="value_changed" from="Control/depth" to="." method="_on_depth_value_changed"]
+[connection signal="color_changed" from="colorpicker" to="." method="_on_colorpicker_color_changed"]
