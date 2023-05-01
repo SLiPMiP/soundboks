@@ -73,7 +73,7 @@ min_value = -50.0
 max_value = 50.0
 value = 1.0
 
-[node name="xn" type="LineEdit" parent="Control/x"]
+[node name="xn" type="SpinBox" parent="Control/x"]
 margin_left = -65.0
 margin_right = -5.0
 margin_bottom = 25.0
@@ -94,7 +94,7 @@ min_value = -50.0
 max_value = 50.0
 value = 1.0
 
-[node name="yn" type="LineEdit" parent="Control/y"]
+[node name="yn" type="SpinBox" parent="Control/y"]
 margin_left = -65.0
 margin_right = -5.0
 margin_bottom = 25.0
@@ -115,7 +115,7 @@ min_value = -50.0
 max_value = 50.0
 value = 1.0
 
-[node name="zn" type="LineEdit" parent="Control/z"]
+[node name="zn" type="SpinBox" parent="Control/z"]
 margin_left = -65.0
 margin_right = -5.0
 margin_bottom = 25.0

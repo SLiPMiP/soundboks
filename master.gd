@@ -53,8 +53,13 @@ func createnewbox():
 
 func _on_newboxbutton_pressed():
 	createnewbox()
+	update()
 #	print(listobox[0]["pos"].x)
 
+func update():
+	xvalue.value = listobox[boxid-1]["pos"].y 
+	yvalue.value = listobox[boxid-1]["pos"].y 
+	zvalue.value = listobox[boxid-1]["pos"].z 
 
 
 onready var xvalue = $Control/x/xn
@@ -62,8 +67,8 @@ func _on_x_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"]==true:
 			listobox[i]["pos"].x=value
-			xvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
+			update()
 
 
 onready var yvalue = $Control/y/yn
@@ -71,8 +76,8 @@ func _on_y_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"]==true:
 			listobox[i]["pos"].y=value
-			yvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
+			update()
 
 
 onready var zvalue = $Control/z/zn
@@ -80,9 +85,8 @@ func _on_z_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"]==true:
 			listobox[i]["pos"].z=value
-			zvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
-			
+			update()
 
 
 
