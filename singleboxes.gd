@@ -25,6 +25,8 @@ func _button_pressed(boxid,listobox):
 	yvalue.value = listobox[boxid-1]["pos"].y
 	zvalue.value = listobox[boxid-1]["pos"].z 
 	
+func _color_changed(color,boxid,listobox):
+	listobox[boxid-1]["color"]=color
 
 func createnewlistitem(boxid,listobox):
 	newPanel = Panel.new()
@@ -46,10 +48,11 @@ func createnewlistitem(boxid,listobox):
 	newLabel.valign=1
 	newHcont.add_child(newLabel)
 	
-	newColor =ColorPickerButton.new()
-	newColor.rect_min_size=Vector2(50,25)
-	newColor.color=listobox[boxid-1]["color"]
-	newHcont.add_child(newColor)
+	#newColor =ColorPickerButton.new()
+	#newColor.rect_min_size=Vector2(50,25)
+	#newColor.color=listobox[boxid-1]["color"]
+	#newHcont.add_child(newColor)
+	#changed ui, removed this element from the list
 	
 	newButt=Button.new()
 	newButt.rect_min_size=Vector2(100,25)
@@ -57,6 +60,5 @@ func createnewlistitem(boxid,listobox):
 	newButt.connect("pressed", self, "_button_pressed",[boxid,listobox])
 	newVcont.add_child(newButt)
 	
-		
 func _on_Spatial_newlistitem(boxid,listobox):
 	createnewlistitem(boxid,listobox)

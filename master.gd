@@ -29,7 +29,7 @@ func createnewbox():
 	"pos":Vector3(0,0,0),
 	"size":Vector3(10,10,10),
 	"name":"Instrument",
-	"color":Color8(90,130,170),
+	"color":Color8(90,130,170,255), #RGBA
 	"split":false,
 	"high":true
 	}
