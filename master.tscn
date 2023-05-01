@@ -74,13 +74,14 @@ max_value = 50.0
 value = 1.0
 
 [node name="xn" type="SpinBox" parent="Control/x"]
-margin_left = -65.0
-margin_right = -5.0
+margin_left = -73.0
+margin_right = 1.0
 margin_bottom = 25.0
+min_value = -100.0
 
 [node name="xnt" type="LineEdit" parent="Control/x"]
-margin_left = -125.0
-margin_right = -65.0
+margin_left = -134.0
+margin_right = -74.0
 margin_bottom = 25.0
 text = "Panorering"
 editable = false
@@ -95,13 +96,14 @@ max_value = 50.0
 value = 1.0
 
 [node name="yn" type="SpinBox" parent="Control/y"]
-margin_left = -65.0
-margin_right = -5.0
+margin_left = -73.0
+margin_right = 1.0
 margin_bottom = 25.0
+min_value = -100.0
 
 [node name="ynt" type="LineEdit" parent="Control/y"]
-margin_left = -125.0
-margin_right = -65.0
+margin_left = -134.0
+margin_right = -74.0
 margin_bottom = 25.0
 text = "Hz"
 editable = false
@@ -116,13 +118,14 @@ max_value = 50.0
 value = 1.0
 
 [node name="zn" type="SpinBox" parent="Control/z"]
-margin_left = -65.0
-margin_right = -5.0
+margin_left = -73.0
+margin_right = 1.0
 margin_bottom = 25.0
+min_value = -100.0
 
 [node name="znt" type="LineEdit" parent="Control/z"]
-margin_left = -125.0
-margin_right = -65.0
+margin_left = -134.0
+margin_right = -74.0
 margin_bottom = 25.0
 text = "Dybde"
 editable = false
@@ -134,14 +137,14 @@ margin_right = 835.0
 margin_bottom = 825.0
 value = 1.0
 
-[node name="wn" type="LineEdit" parent="Control/width"]
-margin_left = -65.0
-margin_right = -5.0
+[node name="wn" type="SpinBox" parent="Control/width"]
+margin_left = -73.0
+margin_right = 1.0
 margin_bottom = 25.0
 
 [node name="wnt" type="LineEdit" parent="Control/width"]
-margin_left = -125.0
-margin_right = -65.0
+margin_left = -134.0
+margin_right = -74.0
 margin_bottom = 25.0
 text = "Width"
 editable = false
@@ -153,14 +156,14 @@ margin_right = 835.0
 margin_bottom = 855.0
 value = 1.0
 
-[node name="hn" type="LineEdit" parent="Control/height"]
-margin_left = -65.0
-margin_right = -5.0
+[node name="hn" type="SpinBox" parent="Control/height"]
+margin_left = -73.0
+margin_right = 1.0
 margin_bottom = 25.0
 
 [node name="hnt" type="LineEdit" parent="Control/height"]
-margin_left = -125.0
-margin_right = -65.0
+margin_left = -134.0
+margin_right = -74.0
 margin_bottom = 25.0
 text = "Height"
 editable = false
@@ -172,14 +175,14 @@ margin_right = 835.0
 margin_bottom = 885.0
 value = 1.0
 
-[node name="dn" type="LineEdit" parent="Control/depth"]
-margin_left = -65.0
-margin_right = -5.0
+[node name="dn" type="SpinBox" parent="Control/depth"]
+margin_left = -73.0
+margin_right = 1.0
 margin_bottom = 25.0
 
 [node name="dnt" type="LineEdit" parent="Control/depth"]
-margin_left = -125.0
-margin_right = -65.0
+margin_left = -134.0
+margin_right = -74.0
 margin_bottom = 25.0
 text = "Depth"
 editable = false

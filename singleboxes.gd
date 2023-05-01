@@ -16,6 +16,9 @@ func _ready():
 onready var xvalue = $"../../x"
 onready var yvalue = $"../../y"
 onready var zvalue = $"../../z"
+onready var widthvalue = $"../../width"
+onready var heightvalue = $"../../height"
+onready var depthvalue = $"../../depth"
 func _button_pressed(boxid,listobox):
 #	print("gays count to"+String(listobox[boxid-1]["id"]))
 	for i in range(listobox.size()):
@@ -24,7 +27,9 @@ func _button_pressed(boxid,listobox):
 	xvalue.value = listobox[boxid-1]["pos"].x 
 	yvalue.value = listobox[boxid-1]["pos"].y
 	zvalue.value = listobox[boxid-1]["pos"].z 
-	
+	widthvalue.value = listobox[boxid-1]["size"].x 
+	heightvalue.value = listobox[boxid-1]["size"].y
+	depthvalue.value = listobox[boxid-1]["size"].z 
 
 func createnewlistitem(boxid,listobox):
 	newPanel = Panel.new()
