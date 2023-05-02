@@ -2,4 +2,15 @@
 
 [node name="Spatial" type="Spatial"]
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.611, 0, 0, 0 )
+width = 10.0
+height = 10.0
+depth = 5.179
+
+[node name="Label3D" type="Label3D" parent="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.07 )
+text = "wqeqwe"
+__meta__ = {
+"_editor_description_": ""
+}
