@@ -125,3 +125,8 @@ func _on_colorpicker_color_changed(color):
 			objsboxs[i].material.albedo_color=color
 #color(0.352941,0.509804,0.666667,1)
 
+func _on_TextEdit_text_changed(Text):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["name"] = Text
+			objsboxs[i].set_text()
