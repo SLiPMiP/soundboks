@@ -8,6 +8,7 @@ var boxid = 0
 var boxmat = SpatialMaterial.new()
 var sbox = {}
 var objsboxs = []
+var textlabelthing = Label3D.new()
 
 	
 # Called when the node enters the scene tree for the first time.
@@ -45,6 +46,8 @@ func createnewbox():
 	newbox.set_material(boxmat)
 	boxmat.albedo_color=listobox[boxid-1]["color"]
 	
+	textlabelthing = Label3D.new()
+	
 	add_child(newbox)
 	objsboxs.append(newbox)
 	
@@ -59,7 +62,9 @@ func _on_newboxbutton_pressed():
 	widthvalue.value = listobox[boxid-1]["size"].z 
 	heightvalue.value = listobox[boxid-1]["size"].y
 	depthvalue.value = listobox[boxid-1]["size"].x 
-#	print(listobox[0]["pos"].x)
+	
+	
+	
 
 onready var xvalue = $Control/x/xn
 func _on_x_value_changed(value):
