@@ -201,18 +201,18 @@ margin_bottom = 700.0
 rect_min_size = Vector2( 100, 700 )
 script = ExtResource( 2 )
 
+[node name="colorpicker" type="ColorPickerButton" parent="Control"]
+margin_left = 861.0
+margin_top = 830.0
+margin_right = 921.0
+margin_bottom = 884.0
+color = Color( 0.352941, 0.509804, 0.666667, 1 )
+
 [node name="TextEdit" type="TextEdit" parent="Control"]
 margin_left = 953.0
 margin_top = 838.0
 margin_right = 1204.0
 margin_bottom = 878.0
-
-[node name="colorpicker" type="ColorPickerButton" parent="."]
-margin_left = 888.0
-margin_top = 830.0
-margin_right = 948.0
-margin_bottom = 884.0
-color = Color( 0.352941, 0.509804, 0.666667, 1 )
 
 [connection signal="newlistitem" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_newlistitem"]
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
@@ -222,5 +222,5 @@ color = Color( 0.352941, 0.509804, 0.666667, 1 )
 [connection signal="value_changed" from="Control/width" to="." method="_on_width_value_changed"]
 [connection signal="value_changed" from="Control/height" to="." method="_on_height_value_changed"]
 [connection signal="value_changed" from="Control/depth" to="." method="_on_depth_value_changed"]
+[connection signal="color_changed" from="Control/colorpicker" to="." method="_on_colorpicker_color_changed"]
 [connection signal="text_changed" from="Control/TextEdit" to="." method="_on_TextEdit_text_changed"]
-[connection signal="color_changed" from="colorpicker" to="." method="_on_colorpicker_color_changed"]

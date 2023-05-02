@@ -60,15 +60,19 @@ func createnewbox():
 
 func _on_newboxbutton_pressed():
 	createnewbox()
-	xvalue.value = listobox[boxid-1]["pos"].x 
-	yvalue.value = listobox[boxid-1]["pos"].y
-	zvalue.value = listobox[boxid-1]["pos"].z 
-	widthvalue.value = listobox[boxid-1]["size"].z 
-	heightvalue.value = listobox[boxid-1]["size"].y
-	depthvalue.value = listobox[boxid-1]["size"].x 
-	
-	
-	
+	xvalue.value = listobox[-1]["pos"].x 
+	yvalue.value = listobox[-1]["pos"].y
+	zvalue.value = listobox[-1]["pos"].z 
+	widthvalue.value = listobox[-1]["size"].z 
+	heightvalue.value = listobox[-1]["size"].y
+	depthvalue.value = listobox[-1]["size"].x 
+	$Control/x.value=0
+	$Control/y.value=0
+	$Control/z.value=0
+	$Control/width.value=10
+	$Control/height.value=10
+	$Control/depth.value=10
+	$Control/colorpicker.color=listobox[-1]["color"]
 
 onready var xvalue = $Control/x/xn
 func _on_x_value_changed(value):

@@ -29,7 +29,7 @@ func _button_pressed(boxid,listobox):
 	heightvalue.value = listobox[boxid-1]["size"].y
 	depthvalue.value = listobox[boxid-1]["size"].x
 	
-	$"../../../colorpicker".color=listobox[boxid-1]["color"]
+	$"../../colorpicker".color=listobox[boxid-1]["color"]
 	
 	 
 
