@@ -49,7 +49,7 @@ func createnewbox():
 	textlabelthing = Label3D.new()
 	textlabelthing.set_text(listobox[boxid-1]["name"])
 	textlabelthing.set_translation(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.01))
-	textlabelthing.set_outline_modulate(Color(1,1,1,1))
+	textlabelthing.set_modulate(Color(1,1,1,1))
 	add_child(textlabelthing)
 	
 	add_child(newbox)
