@@ -3,7 +3,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.611, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.611, -77.6668, 0, 0 )
 width = 10.0
 height = 10.0
 depth = 5.179

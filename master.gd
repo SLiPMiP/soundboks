@@ -49,19 +49,20 @@ func createnewbox():
 	
 	label = Label3D.new()
 	label.set_text(listobox[boxid-1]["name"])
-	label.translate(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.01))
-	label.set_translation(listobox[boxid-1]["pos"])
+	label.translate(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.2))
+	#label.set_translation(listobox[boxid-1]["pos"])
 	label.set_outline_modulate(Color(1,1,1,1))
-	label.pixel_size=0.1
+	label.pixel_size=0.15
 	label.autowrap=true
 	label.width=listobox[boxid-1]["size"].x/label.pixel_size
 
-	add_child(label)
-	lablist.append(label)
 	
 
 	add_child(newbox)
+	newbox.add_child(label)
+	
 	objsboxs.append(newbox)
+	lablist.append(label)
 	
 	emit_signal("newlistitem",boxid,listobox)
 
@@ -148,4 +149,5 @@ func _on_TextEdit_textchange(text):
 		if listobox[i]["high"] == true:
 			listobox[i]["name"]=text
 			lablist[i].set_text(text)
-			
+			print(lablist[i].text)
+

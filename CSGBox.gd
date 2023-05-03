@@ -20,4 +20,3 @@ func _input(event):
 		rotation_degrees.x -= 5
 	if Input.is_key_pressed(KEY_DOWN):
 		rotation_degrees.x += 5
-	event
