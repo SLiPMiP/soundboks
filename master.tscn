@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://master.gd" type="Script" id=1]
 [ext_resource path="res://singleboxes.gd" type="Script" id=2]
 [ext_resource path="res://CSGBox.gd" type="Script" id=3]
+[ext_resource path="res://TextEdit.gd" type="Script" id=4]
 
 [sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
@@ -42,7 +43,7 @@ depth = 1.0
 script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
 environment = SubResource( 3 )
 current = true
 near = 0.01
@@ -188,6 +189,20 @@ margin_bottom = 25.0
 text = "Depth"
 editable = false
 
+[node name="colorpicker" type="ColorPickerButton" parent="Control"]
+margin_left = 861.0
+margin_top = 830.0
+margin_right = 921.0
+margin_bottom = 884.0
+color = Color( 0.352941, 0.509804, 0.666667, 1 )
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+margin_left = 953.0
+margin_top = 838.0
+margin_right = 1204.0
+margin_bottom = 878.0
+script = ExtResource( 4 )
+
 [node name="sboxlist" type="ScrollContainer" parent="Control"]
 margin_top = 50.0
 margin_right = 110.0
@@ -201,19 +216,6 @@ margin_bottom = 700.0
 rect_min_size = Vector2( 100, 700 )
 script = ExtResource( 2 )
 
-[node name="colorpicker" type="ColorPickerButton" parent="Control"]
-margin_left = 861.0
-margin_top = 830.0
-margin_right = 921.0
-margin_bottom = 884.0
-color = Color( 0.352941, 0.509804, 0.666667, 1 )
-
-[node name="TextEdit" type="TextEdit" parent="Control"]
-margin_left = 953.0
-margin_top = 838.0
-margin_right = 1204.0
-margin_bottom = 878.0
-
 [connection signal="newlistitem" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_newlistitem"]
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
 [connection signal="value_changed" from="Control/x" to="." method="_on_x_value_changed"]
@@ -223,4 +225,5 @@ margin_bottom = 878.0
 [connection signal="value_changed" from="Control/height" to="." method="_on_height_value_changed"]
 [connection signal="value_changed" from="Control/depth" to="." method="_on_depth_value_changed"]
 [connection signal="color_changed" from="Control/colorpicker" to="." method="_on_colorpicker_color_changed"]
-[connection signal="text_changed" from="Control/TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="text_changed" from="Control/TextEdit" to="Control/TextEdit" method="_on_TextEdit_text_changed"]
+[connection signal="textchange" from="Control/TextEdit" to="." method="_on_TextEdit_textchange"]

@@ -10,6 +10,7 @@ depth = 5.179
 
 [node name="Label3D" type="Label3D" parent="CSGBox"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.07 )
+pixel_size = 1.0
 text = "wqeqwe"
 __meta__ = {
 "_editor_description_": ""

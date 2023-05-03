@@ -8,7 +8,8 @@ var boxid = 0
 var boxmat = SpatialMaterial.new()
 var sbox = {}
 var objsboxs = []
-var textlabelthing = Label3D.new()
+var label = Label3D.new()
+var lablist = []
 
 	
 # Called when the node enters the scene tree for the first time.
@@ -46,12 +47,19 @@ func createnewbox():
 	newbox.set_material(boxmat)
 	boxmat.albedo_color=listobox[boxid-1]["color"]
 	
-	textlabelthing = Label3D.new()
-	textlabelthing.set_text(listobox[boxid-1]["name"])
-	textlabelthing.set_translation(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.01))
-	textlabelthing.set_outline_modulate(Color(1,1,1,1))
-	add_child(textlabelthing)
+	label = Label3D.new()
+	label.set_text(listobox[boxid-1]["name"])
+	label.translate(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.01))
+	label.set_translation(listobox[boxid-1]["pos"])
+	label.set_outline_modulate(Color(1,1,1,1))
+	label.pixel_size=0.1
+	label.autowrap=true
+	label.width=listobox[boxid-1]["size"].x/label.pixel_size
+
+	add_child(label)
+	lablist.append(label)
 	
+
 	add_child(newbox)
 	objsboxs.append(newbox)
 	
@@ -97,7 +105,6 @@ func _on_z_value_changed(value):
 			listobox[i]["pos"].z = value
 			zvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
-			
 
 
 
@@ -105,9 +112,11 @@ onready var widthvalue = $Control/width/wn
 func _on_width_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
-			listobox[i]["size"].z = value
+			listobox[i]["size"].x = value
 			widthvalue.value = value
-			objsboxs[i].set_width(listobox[i]["size"].z)
+			objsboxs[i].set_width(listobox[i]["size"].x)
+			lablist[i].width=listobox[i]["size"].x/label.pixel_size
+			print(lablist[i].width)
 
 onready var heightvalue = $Control/height/hn
 func _on_height_value_changed(value):
@@ -121,9 +130,9 @@ onready var depthvalue = $Control/depth/dn
 func _on_depth_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
-			listobox[i]["size"].x = value
+			listobox[i]["size"].z = value
 			depthvalue.value = value
-			objsboxs[i].set_depth(listobox[i]["size"].x)
+			objsboxs[i].set_depth(listobox[i]["size"].z)
 
 
 func _on_colorpicker_color_changed(color):
@@ -133,9 +142,10 @@ func _on_colorpicker_color_changed(color):
 			objsboxs[i].material.albedo_color=color
 #color(0.352941,0.509804,0.666667,1)
 
-func _on_TextEdit_text_changed(Text):
+
+func _on_TextEdit_textchange(text):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
-			listobox[i]["name"] = Text
-			objsboxs[i].set_text(listobox[i]["name"])
-			print("gay")
+			listobox[i]["name"]=text
+			lablist[i].set_text(text)
+			
