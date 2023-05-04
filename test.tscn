@@ -2,8 +2,6 @@
 
 [node name="Spatial" type="Spatial"]
 
-[node name="ColorPicker" type="ColorPicker" parent="."]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 310.0
-margin_bottom = 466.0
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0

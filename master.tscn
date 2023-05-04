@@ -472,3 +472,4 @@ material = SubResource( 5 )
 [connection signal="color_changed" from="Control/colorpicker" to="." method="_on_colorpicker_color_changed"]
 [connection signal="text_changed" from="Control/TextEdit" to="Control/TextEdit" method="_on_TextEdit_text_changed"]
 [connection signal="textchange" from="Control/TextEdit" to="." method="_on_TextEdit_textchange"]
+[connection signal="listcolorchanged" from="Control/sboxlist/singleboxes" to="." method="_on_singleboxes_listcolorchanged"]

@@ -202,3 +202,4 @@ func _on_TextEdit_textchange(text):
 			listobox[i]["name"]=text
 			lablist[i].set_text(text)
 			emit_signal("namechanged",lablist,i)
+
