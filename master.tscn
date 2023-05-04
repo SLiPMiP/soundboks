@@ -143,7 +143,7 @@ margin_left = 635.0
 margin_top = 800.0
 margin_right = 835.0
 margin_bottom = 825.0
-value = 1.0
+value = 10.0
 
 [node name="wn" type="SpinBox" parent="Control/width"]
 margin_left = -73.0
@@ -162,7 +162,7 @@ margin_left = 635.0
 margin_top = 830.0
 margin_right = 835.0
 margin_bottom = 855.0
-value = 1.0
+value = 10.0
 
 [node name="hn" type="SpinBox" parent="Control/height"]
 margin_left = -73.0
@@ -181,7 +181,7 @@ margin_left = 635.0
 margin_top = 860.0
 margin_right = 835.0
 margin_bottom = 885.0
-value = 1.0
+value = 10.0
 
 [node name="dn" type="SpinBox" parent="Control/depth"]
 margin_left = -73.0
