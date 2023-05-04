@@ -60,17 +60,17 @@ margin_bottom = 40.0
 [node name="newboxbutton" type="Button" parent="Control"]
 anchor_right = 1.581
 anchor_bottom = 1.911
-margin_left = 190.0
-margin_top = 760.0
-margin_right = 191.76
-margin_bottom = 718.56
+margin_left = 126.0
+margin_top = 60.0
+margin_right = 127.76
+margin_bottom = 18.56
 text = "new box"
 
 [node name="x" type="HScrollBar" parent="Control"]
-margin_left = 260.0
-margin_top = 800.0
-margin_right = 460.0
-margin_bottom = 825.0
+margin_left = 262.0
+margin_top = 110.0
+margin_right = 462.0
+margin_bottom = 135.0
 min_value = -50.0
 max_value = 50.0
 value = 1.0
@@ -90,10 +90,10 @@ text = "Panorering"
 editable = false
 
 [node name="y" type="HScrollBar" parent="Control"]
-margin_left = 260.0
-margin_top = 830.0
-margin_right = 460.0
-margin_bottom = 855.0
+margin_left = 262.0
+margin_top = 140.0
+margin_right = 462.0
+margin_bottom = 165.0
 min_value = -50.0
 max_value = 50.0
 value = 1.0
@@ -113,10 +113,10 @@ text = "Hz"
 editable = false
 
 [node name="z" type="HScrollBar" parent="Control"]
-margin_left = 260.0
-margin_top = 860.0
-margin_right = 460.0
-margin_bottom = 885.0
+margin_left = 262.0
+margin_top = 170.0
+margin_right = 462.0
+margin_bottom = 195.0
 min_value = -50.0
 max_value = 50.0
 value = 1.0
@@ -136,10 +136,10 @@ text = "Dybde"
 editable = false
 
 [node name="width" type="HScrollBar" parent="Control"]
-margin_left = 635.0
-margin_top = 800.0
-margin_right = 835.0
-margin_bottom = 825.0
+margin_left = 263.0
+margin_top = 218.0
+margin_right = 463.0
+margin_bottom = 243.0
 value = 10.0
 
 [node name="wn" type="SpinBox" parent="Control/width"]
@@ -155,10 +155,10 @@ text = "Width"
 editable = false
 
 [node name="height" type="HScrollBar" parent="Control"]
-margin_left = 635.0
-margin_top = 830.0
-margin_right = 835.0
-margin_bottom = 855.0
+margin_left = 263.0
+margin_top = 248.0
+margin_right = 463.0
+margin_bottom = 273.0
 value = 10.0
 
 [node name="hn" type="SpinBox" parent="Control/height"]
@@ -174,10 +174,10 @@ text = "Height"
 editable = false
 
 [node name="depth" type="HScrollBar" parent="Control"]
-margin_left = 635.0
-margin_top = 860.0
-margin_right = 835.0
-margin_bottom = 885.0
+margin_left = 263.0
+margin_top = 278.0
+margin_right = 463.0
+margin_bottom = 303.0
 value = 10.0
 
 [node name="dn" type="SpinBox" parent="Control/depth"]
@@ -193,17 +193,17 @@ text = "Depth"
 editable = false
 
 [node name="colorpicker" type="ColorPickerButton" parent="Control"]
-margin_left = 861.0
-margin_top = 830.0
-margin_right = 921.0
-margin_bottom = 884.0
+margin_left = 137.0
+margin_top = 328.0
+margin_right = 197.0
+margin_bottom = 382.0
 color = Color( 0.352941, 0.509804, 0.666667, 1 )
 
 [node name="TextEdit" type="TextEdit" parent="Control"]
-margin_left = 953.0
-margin_top = 838.0
-margin_right = 1204.0
-margin_bottom = 878.0
+margin_left = 213.0
+margin_top = 336.0
+margin_right = 464.0
+margin_bottom = 376.0
 script = ExtResource( 4 )
 
 [node name="sboxlist" type="ScrollContainer" parent="Control"]

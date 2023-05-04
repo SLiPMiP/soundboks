@@ -15,8 +15,9 @@ run/main_scene="res://master.tscn"
 
 [display]
 
-window/size/width=1500
-window/size/height=1000
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
 window/size/test_width=1500
 window/size/test_height=800
 window/stretch/mode="2d"
