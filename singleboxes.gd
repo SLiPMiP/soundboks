@@ -27,9 +27,9 @@ func _button_pressed(boxid,listobox):
 	xvalue.value = listobox[boxid-1]["pos"].x 
 	yvalue.value = listobox[boxid-1]["pos"].y
 	zvalue.value = listobox[boxid-1]["pos"].z 
-	widthvalue.value = listobox[boxid-1]["size"].z 
+	widthvalue.value = listobox[boxid-1]["size"].x
 	heightvalue.value = listobox[boxid-1]["size"].y
-	depthvalue.value = listobox[boxid-1]["size"].x	
+	depthvalue.value = listobox[boxid-1]["size"].z
 	$"../../colorpicker".color=listobox[boxid-1]["color"]
 	$"../../TextEdit".text=listobox[boxid-1]["name"]
 	

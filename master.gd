@@ -14,7 +14,7 @@ var lablist = []
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	createnewbox()
+	pass
 
 
 signal newlistitem(boxid,listobox,lablist)
@@ -82,7 +82,6 @@ func _on_newboxbutton_pressed():
 	$Control/height.value=10
 	$Control/depth.value=10
 	$Control/colorpicker.color=listobox[-1]["color"]
-	$Control/TextEdit.text=listobox[-1]["name"]
 
 onready var xnvalue = $Control/x/xn
 func _on_x_value_changed(value):
