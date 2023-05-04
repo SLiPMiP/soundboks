@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://master.gd" type="Script" id=1]
 [ext_resource path="res://singleboxes.gd" type="Script" id=2]
@@ -31,6 +31,9 @@ func _ready():
 #func _process(delta):
 #	pass
 "
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0, 0, 0, 1 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -218,6 +221,92 @@ margin_right = 100.0
 margin_bottom = 700.0
 rect_min_size = Vector2( 100, 700 )
 script = ExtResource( 2 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="Spatial"]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox9" type="CSGBox" parent="Spatial"]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox4" type="CSGBox" parent="Spatial"]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, -50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox10" type="CSGBox" parent="Spatial"]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox2" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, 0, 1, 0, 1, 0, -100, 0, -4.37114e-08, 50, -50, 0 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox11" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, 0, 1, 0, 1, 0, -100, 0, -4.37114e-08, 50, 50, 0 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox3" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, 0, 1, 0, 1, 0, -100, 0, -4.37114e-08, -50, -50, 0 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox12" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, 0, 1, 0, 1, 0, -100, 0, -4.37114e-08, -50, 50, 0 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox5" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, 0, 0, 1, -50, 0, 50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox6" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, 0, 0, 1, 50, 0, 50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox7" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, 0, 0, 1, 50, 0, -50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
+
+[node name="CSGBox8" type="CSGBox" parent="Spatial"]
+transform = Transform( -4.37114e-06, -1, 0, 100, -4.37114e-08, 0, 0, 0, 1, -50, 0, -50 )
+width = 1.0
+height = 1.0
+depth = 1.0
+material = SubResource( 4 )
 
 [connection signal="newlistitem" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_newlistitem"]
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
