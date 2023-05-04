@@ -79,7 +79,8 @@ value = 1.0
 margin_left = -73.0
 margin_right = 1.0
 margin_bottom = 25.0
-min_value = -100.0
+min_value = -50.0
+max_value = 50.0
 
 [node name="xnt" type="LineEdit" parent="Control/x"]
 margin_left = -134.0
@@ -101,7 +102,8 @@ value = 1.0
 margin_left = -73.0
 margin_right = 1.0
 margin_bottom = 25.0
-min_value = -100.0
+min_value = -50.0
+max_value = 50.0
 
 [node name="ynt" type="LineEdit" parent="Control/y"]
 margin_left = -134.0
@@ -123,7 +125,8 @@ value = 1.0
 margin_left = -73.0
 margin_right = 1.0
 margin_bottom = 25.0
-min_value = -100.0
+min_value = -50.0
+max_value = 50.0
 
 [node name="znt" type="LineEdit" parent="Control/z"]
 margin_left = -134.0
@@ -216,11 +219,15 @@ margin_bottom = 700.0
 rect_min_size = Vector2( 100, 700 )
 script = ExtResource( 2 )
 
+[connection signal="namechanged" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_namechanged"]
 [connection signal="newlistitem" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_newlistitem"]
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
 [connection signal="value_changed" from="Control/x" to="." method="_on_x_value_changed"]
+[connection signal="value_changed" from="Control/x/xn" to="." method="_on_xn_value_changed"]
 [connection signal="value_changed" from="Control/y" to="." method="_on_y_value_changed"]
+[connection signal="value_changed" from="Control/y/yn" to="." method="_on_yn_value_changed"]
 [connection signal="value_changed" from="Control/z" to="." method="_on_z_value_changed"]
+[connection signal="value_changed" from="Control/z/zn" to="." method="_on_zn_value_changed"]
 [connection signal="value_changed" from="Control/width" to="." method="_on_width_value_changed"]
 [connection signal="value_changed" from="Control/height" to="." method="_on_height_value_changed"]
 [connection signal="value_changed" from="Control/depth" to="." method="_on_depth_value_changed"]

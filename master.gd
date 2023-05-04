@@ -17,7 +17,7 @@ func _ready():
 	pass
 
 
-signal newlistitem(boxid,listobox)
+signal newlistitem(boxid,listobox,lablist)
 
 
 func createnewbox():
@@ -64,14 +64,14 @@ func createnewbox():
 	objsboxs.append(newbox)
 	lablist.append(label)
 	
-	emit_signal("newlistitem",boxid,listobox)
+	emit_signal("newlistitem",boxid,listobox,lablist)
 
 
 func _on_newboxbutton_pressed():
 	createnewbox()
-	xvalue.value = listobox[-1]["pos"].x 
-	yvalue.value = listobox[-1]["pos"].y
-	zvalue.value = listobox[-1]["pos"].z 
+	xnvalue.value = listobox[-1]["pos"].x 
+	ynvalue.value = listobox[-1]["pos"].y
+	znvalue.value = listobox[-1]["pos"].z 
 	widthvalue.value = listobox[-1]["size"].z 
 	heightvalue.value = listobox[-1]["size"].y
 	depthvalue.value = listobox[-1]["size"].x 
@@ -83,31 +83,53 @@ func _on_newboxbutton_pressed():
 	$Control/depth.value=10
 	$Control/colorpicker.color=listobox[-1]["color"]
 
-onready var xvalue = $Control/x/xn
+onready var xnvalue = $Control/x/xn
 func _on_x_value_changed(value):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["pos"].x = value
+			xnvalue.value = value
+			objsboxs[i].set_translation(listobox[i]["pos"])
+
+onready var xvalue = $Control/x
+func _on_xn_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["pos"].x = value
 			xvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
 
-onready var yvalue = $Control/y/yn
+onready var ynvalue = $Control/y/yn
 func _on_y_value_changed(value):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["pos"].y = value
+			ynvalue.value = value
+			objsboxs[i].set_translation(listobox[i]["pos"])
+
+onready var yvalue = $Control/y
+func _on_yn_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["pos"].y = value
 			yvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
 
-onready var zvalue = $Control/z/zn
+onready var znvalue = $Control/z/zn
 func _on_z_value_changed(value):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["pos"].z = value
+			znvalue.value = value
+			objsboxs[i].set_translation(listobox[i]["pos"])
+
+onready var zvalue = $Control/z
+func _on_zn_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["pos"].z = value
 			zvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
-
-
 
 onready var widthvalue = $Control/width/wn
 func _on_width_value_changed(value):
@@ -144,11 +166,15 @@ func _on_colorpicker_color_changed(color):
 			objsboxs[i].material.albedo_color=color
 #color(0.352941,0.509804,0.666667,1)
 
+signal namechanged(lablist,number)
 
 func _on_TextEdit_textchange(text):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["name"]=text
 			lablist[i].set_text(text)
-			print(lablist[i].text)
+			emit_signal("namechanged",lablist,i)
 
+
+
+createnewbox()

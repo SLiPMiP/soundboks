@@ -8,6 +8,8 @@ var newLabel = Label.new()
 var newPanel = Panel.new()
 #var newColor= ColorPickerButton.new()
 
+var butts=[]
+
 func _ready():
 	pass
 
@@ -29,11 +31,12 @@ func _button_pressed(boxid,listobox):
 	heightvalue.value = listobox[boxid-1]["size"].y
 	depthvalue.value = listobox[boxid-1]["size"].x
 	
+	
 	$"../../colorpicker".color=listobox[boxid-1]["color"]
 	
 	 
 
-func createnewlistitem(boxid,listobox):
+func createnewlistitem(boxid,listobox,lablist):
 	newPanel = Panel.new()
 	newPanel.rect_min_size = Vector2(100,50)
 	add_child(newPanel)
@@ -61,9 +64,16 @@ func createnewlistitem(boxid,listobox):
 	
 	newButt = Button.new()
 	newButt.rect_min_size = Vector2(100,25)
-	newButt.text = listobox[boxid-1]["name"]
+	newButt.text = lablist[boxid-1].text
 	newButt.connect("pressed", self, "_button_pressed",[boxid,listobox])
 	newVcont.add_child(newButt)
 	
-func _on_Spatial_newlistitem(boxid,listobox):
-	createnewlistitem(boxid,listobox)
+	butts.append(newButt)
+	
+func _on_Spatial_newlistitem(boxid,listobox,lablist):
+	createnewlistitem(boxid,listobox,lablist)
+
+
+func _on_Spatial_namechanged(lablist, number):
+	print(butts[number].text)
+	butts[number].text=lablist[number].text
