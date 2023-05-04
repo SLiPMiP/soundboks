@@ -131,26 +131,53 @@ func _on_zn_value_changed(value):
 			zvalue.value = value
 			objsboxs[i].set_translation(listobox[i]["pos"])
 
-onready var widthvalue = $Control/width/wn
+
+
+onready var wnvalue = $Control/width/wn
 func _on_width_value_changed(value):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["size"].x = value
+			wnvalue.value = value
+			objsboxs[i].set_width(listobox[i]["size"].x)
+			lablist[i].width=listobox[i]["size"].x/label.pixel_size
+
+onready var widthvalue = $Control/width
+func _on_wn_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["size"].x = value
 			widthvalue.value = value
 			objsboxs[i].set_width(listobox[i]["size"].x)
 			lablist[i].width=listobox[i]["size"].x/label.pixel_size
-			print(lablist[i].width)
 
-onready var heightvalue = $Control/height/hn
+onready var hnvalue = $Control/height/hn
 func _on_height_value_changed(value):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["size"].y = value
+			hnvalue.value = value
+			objsboxs[i].set_height(listobox[i]["size"].y)
+
+onready var heightvalue = $Control/height
+func _on_hn_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["size"].y = value
 			heightvalue.value = value
 			objsboxs[i].set_height(listobox[i]["size"].y)
 
-onready var depthvalue = $Control/depth/dn
+onready var dnvalue = $Control/depth/dn
 func _on_depth_value_changed(value):
+	for i in range(listobox.size()):
+		if listobox[i]["high"] == true:
+			listobox[i]["size"].z = value
+			dnvalue.value = value
+			objsboxs[i].set_depth(listobox[i]["size"].z)
+			lablist[i].set_translation(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.2))
+
+onready var depthvalue = $Control/depth
+func _on_dn_value_changed(value):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["size"].z = value
@@ -174,7 +201,3 @@ func _on_TextEdit_textchange(text):
 			listobox[i]["name"]=text
 			lablist[i].set_text(text)
 			emit_signal("namechanged",lablist,i)
-
-
-
-createnewbox()

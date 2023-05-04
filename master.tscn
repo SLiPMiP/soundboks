@@ -219,7 +219,6 @@ margin_bottom = 700.0
 rect_min_size = Vector2( 100, 700 )
 script = ExtResource( 2 )
 
-[connection signal="namechanged" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_namechanged"]
 [connection signal="newlistitem" from="." to="Control/sboxlist/singleboxes" method="_on_Spatial_newlistitem"]
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
 [connection signal="value_changed" from="Control/x" to="." method="_on_x_value_changed"]
@@ -229,8 +228,11 @@ script = ExtResource( 2 )
 [connection signal="value_changed" from="Control/z" to="." method="_on_z_value_changed"]
 [connection signal="value_changed" from="Control/z/zn" to="." method="_on_zn_value_changed"]
 [connection signal="value_changed" from="Control/width" to="." method="_on_width_value_changed"]
+[connection signal="value_changed" from="Control/width/wn" to="." method="_on_wn_value_changed"]
 [connection signal="value_changed" from="Control/height" to="." method="_on_height_value_changed"]
+[connection signal="value_changed" from="Control/height/hn" to="." method="_on_hn_value_changed"]
 [connection signal="value_changed" from="Control/depth" to="." method="_on_depth_value_changed"]
+[connection signal="value_changed" from="Control/depth/dn" to="." method="_on_dn_value_changed"]
 [connection signal="color_changed" from="Control/colorpicker" to="." method="_on_colorpicker_color_changed"]
 [connection signal="text_changed" from="Control/TextEdit" to="Control/TextEdit" method="_on_TextEdit_text_changed"]
 [connection signal="textchange" from="Control/TextEdit" to="." method="_on_TextEdit_textchange"]
