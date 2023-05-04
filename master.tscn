@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://master.gd" type="Script" id=1]
 [ext_resource path="res://singleboxes.gd" type="Script" id=2]
@@ -33,6 +33,13 @@ func _ready():
 "
 
 [sub_resource type="SpatialMaterial" id=4]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=5]
 emission_enabled = true
 emission = Color( 1, 1, 1, 1 )
 emission_energy = 1.0
@@ -367,25 +374,31 @@ uppercase = true
 
 [node name="CSGBox" type="CSGBox" parent="Spatial/Spatial/Label3D"]
 transform = Transform( 0.00634371, 0, 0, 0, 0.00140899, 0, 0, 0, 0.0304983, -0.0511585, 0.000602372, 0 )
+material = SubResource( 5 )
 
 [node name="CSGBox2" type="CSGBox" parent="Spatial/Spatial/Label3D"]
-transform = Transform( 0.00391378, -0.000696335, 0, 0.00349159, 0.000780534, 0, 0, 0, 0.03, -0.05569, 0.00266404, 0.0250015 )
+transform = Transform( 0.00391378, -0.000696335, 0, 0.00349159, 0.000780534, 0, 0, 0, 0.03, -0.05569, 0.00266405, 0.0250015 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox3" type="CSGBox" parent="Spatial/Spatial/Label3D"]
 transform = Transform( 0.00370869, 0.000739634, 0, -0.00370869, 0.000739634, 0, 0, 0, 0.03, -0.05569, -0.00203191, 0.0250015 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox4" type="CSGBox" parent="Spatial/Spatial/Label3D"]
-transform = Transform( -0.00634351, 1.12383e-05, 0, -5.05982e-05, -0.00140895, 0, 0, 0, 0.0304983, 0.0510035, 0.000664212, 0 )
+transform = Transform( -0.00634351, 1.12383e-05, 0, -5.05982e-05, -0.00140895, 0, 0, 0, 0.0304983, 0.0510035, 0.000664227, 0 )
+material = SubResource( 5 )
 
 [node name="CSGBox5" type="CSGBox" parent="Spatial/Spatial/Label3D"]
 transform = Transform( -0.0038858, 0.000702539, 0, -0.00352269, -0.000774955, 0, 0, 0, 0.03, 0.0555514, -0.00136124, 0.0250015 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox6" type="CSGBox" parent="Spatial/Spatial/Label3D"]
 transform = Transform( -0.00373816, -0.000733711, 0, 0.003679, -0.00074551, 0, 0, 0, 0.03, 0.0555139, 0.00333456, 0.0250015 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="Label3D3" type="Label3D" parent="Spatial/Spatial"]
 transform = Transform( 500, 0, 0, 0, 500, 0, 0, 0, 1, 0, -60.9976, -61.4747 )
@@ -396,26 +409,32 @@ uppercase = true
 autowrap = true
 
 [node name="CSGBox7" type="CSGBox" parent="Spatial/Spatial/Label3D3"]
-transform = Transform( 0.00634371, 0, 0, 0, 0.00140899, 0, 0, 0, 0.0304982, -0.0312909, 7.20397e-05, 0 )
+transform = Transform( -2.77292e-10, -0.00140899, 0, 0.00138957, -1.34908e-11, 5.9515e-05, -3.09483, 3.00466e-08, 0.00668049, 0.000183604, -0.00943733, 28.4958 )
+material = SubResource( 5 )
 
 [node name="CSGBox8" type="CSGBox" parent="Spatial/Spatial/Label3D3"]
-transform = Transform( 0.00391377, -0.000696335, 0, 0.00349158, 0.000780534, 0, 0, 0, 0.03, -0.0358225, 0.00213368, 0 )
+transform = Transform( -0.0037747, -0.000726232, 0, 0.000797653, -0.000164897, 5.85426e-05, -1.77653, 0.367257, 0.00657133, -0.00221079, -0.0104362, 30.7206 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox9" type="CSGBox" parent="Spatial/Spatial/Label3D3"]
-transform = Transform( 0.00370869, 0.000739633, 0, -0.00370869, 0.000739634, 0, 0, 0, 0.03, -0.0358225, -0.00256228, 0 )
+transform = Transform( 0.0037087, -0.000739633, 0, 0.000812374, 0.000162014, 5.85426e-05, -1.80931, -0.360835, 0.00657133, 0.00248471, -0.0104218, 30.6882 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox10" type="CSGBox" parent="Spatial/Spatial/Label3D3"]
-transform = Transform( -0.0063435, 1.12383e-05, 0, -5.05982e-05, -0.00140895, 0, 0, 0, 0.0304982, 0.0313423, -3.74764e-05, 0 )
+transform = Transform( -7.97133e-06, 0.00140899, 0, -0.00138956, -3.87822e-07, 5.9515e-05, 3.09482, 0.000863753, 0.00668049, 8.74571e-05, -0.00348981, 15.2494 )
+material = SubResource( 5 )
 
 [node name="CSGBox11" type="CSGBox" parent="Spatial/Spatial/Label3D3"]
-transform = Transform( -0.0038858, 0.000702539, 0, -0.00352269, -0.000774955, 0, 0, 0, 0.03, 0.0358901, -0.00206294, 0 )
+transform = Transform( 0.00377011, 0.000727176, 0, -0.000798692, 0.000164697, 5.85427e-05, 1.77884, -0.366811, 0.00657136, 0.00248759, -0.00249154, 13.0261 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox12" type="CSGBox" parent="Spatial/Spatial/Label3D3"]
-transform = Transform( -0.00373815, -0.00073371, 0, 0.003679, -0.00074551, 0, 0, 0, 0.03, 0.0358527, 0.00263286, 0 )
+transform = Transform( -0.00371334, 0.000738702, 0, -0.000811352, -0.000162217, 5.85427e-05, 1.80704, 0.361288, 0.00657136, -0.00220792, -0.0025048, 13.0556 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="Label3D2" type="Label3D" parent="Spatial/Spatial"]
 transform = Transform( 500.317, 0, 0, 0, 500.317, 0, 0, 0, 1.00063, 57, 0, 50 )
@@ -428,25 +447,31 @@ width = 100.0
 
 [node name="CSGBox" type="CSGBox" parent="Spatial/Spatial/Label3D2"]
 transform = Transform( -2.77116e-10, -0.0014081, 0, 0.00633969, -6.15499e-11, 0, 0, 0, 0.0304789, -0.000124112, -0.0135023, -0.000202179 )
+material = SubResource( 5 )
 
 [node name="CSGBox2" type="CSGBox" parent="Spatial/Spatial/Label3D2"]
-transform = Transform( -0.0037723, -0.000725771, 0, 0.00363918, -0.000752319, 0, 0, 0, 0.0299809, -0.00251699, -0.0180596, 0.0247993 )
+transform = Transform( -0.0037723, -0.000725771, 0, 0.00363918, -0.000752319, 0, 0, 0, 0.0299809, -0.00251698, -0.0180596, 0.0247993 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox3" type="CSGBox" parent="Spatial/Spatial/Label3D2"]
 transform = Transform( 0.00370634, -0.000739163, 0, 0.00370634, 0.000739164, 0, 0, 0, 0.0299809, 0.00217554, -0.0179933, 0.024807 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox4" type="CSGBox" parent="Spatial/Spatial/Label3D2"]
 transform = Transform( -7.96627e-06, 0.0014081, 0, -0.00633968, -1.76938e-06, 0, 0, 0, 0.0304789, -0.000220194, 0.0136328, -0.000202179 )
+material = SubResource( 5 )
 
 [node name="CSGBox5" type="CSGBox" parent="Spatial/Spatial/Label3D2"]
 transform = Transform( 0.00376772, 0.000726715, 0, -0.00364392, 0.000751406, 0, 0, 0, 0.029981, 0.00217842, 0.0181871, 0.0247993 )
 width = 1.65268
+material = SubResource( 5 )
 
 [node name="CSGBox6" type="CSGBox" parent="Spatial/Spatial/Label3D2"]
-transform = Transform( -0.00371099, 0.000738234, 0, -0.00370168, -0.000740092, 0, 0, 0, 0.029981, -0.00251412, 0.0181267, 0.024807 )
+transform = Transform( -0.00371099, 0.000738234, 0, -0.00370168, -0.000740092, 0, 0, 0, 0.029981, -0.00251411, 0.0181267, 0.024807 )
 width = 1.65268
+material = SubResource( 5 )
 
 [connection signal="pressed" from="Control/newboxbutton" to="." method="_on_newboxbutton_pressed"]
 [connection signal="value_changed" from="Control/x" to="." method="_on_x_value_changed"]
