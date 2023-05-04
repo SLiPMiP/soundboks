@@ -157,7 +157,7 @@ func _on_depth_value_changed(value):
 			listobox[i]["size"].z = value
 			depthvalue.value = value
 			objsboxs[i].set_depth(listobox[i]["size"].z)
-			lablist[i].set_translation(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.2))
+			lablist[i].set_translation(Vector3(0,0,listobox[i]["size"].z/2+0.2))
 
 
 func _on_colorpicker_color_changed(color):
@@ -175,7 +175,3 @@ func _on_TextEdit_textchange(text):
 			listobox[i]["name"]=text
 			lablist[i].set_text(text)
 			emit_signal("namechanged",lablist,i)
-
-
-
-
