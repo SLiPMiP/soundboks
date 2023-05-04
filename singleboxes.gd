@@ -6,9 +6,10 @@ var newVcont = VBoxContainer.new()
 var newButt = Button.new()
 var newLabel = Label.new()
 var newPanel = Panel.new()
-#var newColor= ColorPickerButton.new()
+var newColor= ColorPickerButton.new()
 
 var butts=[]
+var cols =[]
 
 func _ready():
 	pass
@@ -55,11 +56,12 @@ func createnewlistitem(boxid,listobox,lablist):
 	newLabel.valign = 1
 	newHcont.add_child(newLabel)
 	
-	#newColor =ColorPickerButton.new()
-	#newColor.rect_min_size=Vector2(50,25)
-	#newColor.color=listobox[boxid-1]["color"]
-	#newHcont.add_child(newColor)
-	#changed ui, removed this element from the list
+	newColor =ColorPickerButton.new()
+	newColor.rect_min_size=Vector2(50,25)
+	newColor.color=listobox[boxid-1]["color"]
+	newHcont.add_child(newColor)
+
+	cols.append(newColor)
 	
 	newButt = Button.new()
 	newButt.rect_min_size = Vector2(100,25)
@@ -74,5 +76,4 @@ func _on_Spatial_newlistitem(boxid,listobox,lablist):
 
 
 func _on_Spatial_namechanged(lablist, number):
-	print(butts[number].text)
 	butts[number].text=lablist[number].text

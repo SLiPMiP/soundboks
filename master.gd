@@ -184,12 +184,14 @@ func _on_dn_value_changed(value):
 			objsboxs[i].set_depth(listobox[i]["size"].z)
 			lablist[i].set_translation(Vector3(0,0,listobox[i]["size"].z/2+0.2))
 
+signal coloreschangerus(listobox,number)
 
 func _on_colorpicker_color_changed(color):
 	for i in range(listobox.size()):
 		if listobox[i]["high"] == true:
 			listobox[i]["color"]=color
 			objsboxs[i].material.albedo_color=color
+			emit_signal("coloreschangerus",listobox,i)
 #color(0.352941,0.509804,0.666667,1)
 
 signal namechanged(lablist,number)
