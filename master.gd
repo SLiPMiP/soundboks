@@ -56,7 +56,6 @@ func createnewbox():
 	label.autowrap=true
 	label.width=listobox[boxid-1]["size"].x/label.pixel_size
 
-	
 
 	add_child(newbox)
 	newbox.add_child(label)
