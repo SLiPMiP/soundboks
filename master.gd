@@ -173,7 +173,7 @@ func _on_depth_value_changed(value):
 			listobox[i]["size"].z = value
 			dnvalue.value = value
 			objsboxs[i].set_depth(listobox[i]["size"].z)
-			lablist[i].set_translation(Vector3(0,0,listobox[boxid-1]["size"].z/2+0.2))
+			lablist[i].set_translation(Vector3(0,0,listobox[i]["size"].z/2+0.2))
 
 onready var depthvalue = $Control/depth
 func _on_dn_value_changed(value):
