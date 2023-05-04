@@ -2,16 +2,8 @@
 
 [node name="Spatial" type="Spatial"]
 
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.611, -77.6668, 0, 0 )
-width = 10.0
-height = 10.0
-depth = 5.179
-
-[node name="Label3D" type="Label3D" parent="CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.07 )
-pixel_size = 1.0
-text = "wqeqwe"
-__meta__ = {
-"_editor_description_": ""
-}
+[node name="ColorPicker" type="ColorPicker" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 310.0
+margin_bottom = 466.0

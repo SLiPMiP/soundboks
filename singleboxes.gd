@@ -77,3 +77,7 @@ func _on_Spatial_newlistitem(boxid,listobox,lablist):
 
 func _on_Spatial_namechanged(lablist, number):
 	butts[number].text=lablist[number].text
+
+
+func _on_Spatial_coloreschangerus(listobox, number):
+	cols[number].color=listobox[number]["color"]
