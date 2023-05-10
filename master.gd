@@ -35,7 +35,7 @@ func createnewbox():
 	"split":false,
 	"high":true
 	}
-		
+	
 	listobox.append(sbox)
 	newbox = CSGBox.new()
 	newbox.set_depth(listobox[boxid-1]["size"].x)
@@ -81,6 +81,7 @@ func _on_newboxbutton_pressed():
 	$Control/height.value=10
 	$Control/depth.value=10
 	$Control/colorpicker.color=listobox[-1]["color"]
+
 
 onready var xnvalue = $Control/x/xn
 func _on_x_value_changed(value):
