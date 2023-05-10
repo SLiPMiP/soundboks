@@ -6,7 +6,7 @@ var newVcont = VBoxContainer.new()
 var newButt = Button.new()
 var newLabel = Label.new()
 var newPanel = Panel.new()
-var newColor= ColorPickerButton.new()
+var newColor= ColorRect.new()
 
 var butts=[]
 var cols =[]
@@ -34,8 +34,10 @@ func _button_pressed(boxid,listobox):
 	$"../../colorpicker".color=listobox[boxid-1]["color"]
 	$"../../TextEdit".text=listobox[boxid-1]["name"]
 	
-	 
 
+
+signal listcolorchanged(boxid,listobox,cols) 
+	
 func createnewlistitem(boxid,listobox,lablist):
 	newPanel = Panel.new()
 	newPanel.rect_min_size = Vector2(100,50)
@@ -56,11 +58,10 @@ func createnewlistitem(boxid,listobox,lablist):
 	newLabel.valign = 1
 	newHcont.add_child(newLabel)
 	
-	newColor =ColorPickerButton.new()
+	newColor =ColorRect.new()
 	newColor.rect_min_size=Vector2(50,25)
 	newColor.color=listobox[boxid-1]["color"]
 	newHcont.add_child(newColor)
-
 	cols.append(newColor)
 	
 	newButt = Button.new()
@@ -77,3 +78,7 @@ func _on_Spatial_newlistitem(boxid,listobox,lablist):
 
 func _on_Spatial_namechanged(lablist, number):
 	butts[number].text=lablist[number].text
+
+
+func _on_Spatial_coloreschangerus(listobox, number):
+	cols[number].color=listobox[number]["color"]
