@@ -58,7 +58,7 @@ depth = 1.0
 script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="CSGBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 150 )
 environment = SubResource( 3 )
 current = true
 near = 0.01
